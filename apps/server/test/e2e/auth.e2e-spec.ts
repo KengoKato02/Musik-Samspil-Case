@@ -8,6 +8,7 @@ import { GeocodingService } from "../../src/modules/geocoding/geocoding.service"
 
 describe("Auth API (e2e)", () => {
   let app: INestApplication;
+  let accessToken: string;
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({

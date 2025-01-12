@@ -27,16 +27,16 @@ export const PostGrid = ({
           }}
         >
           <PostCard
-            key={post._id}
-            title={post.title}
-            firstName={post.author_id.first_name}
-            lastName={post.author_id.last_name}
-            description={post.description}
-            type={post.type}
-            website={post.website_url}
-            createdAt={post.created_at}
-            instruments={post.ensemble_id.open_positions}
-            location={`${post.ensemble_id.location.city}, ${post.ensemble_id.location.country}`}
+            key={post._id || "No id"}
+            title={post.title || "No title"}
+            firstName={post.author_id?.first_name || "No first name"}
+            lastName={post.author_id?.last_name || "No last name"}
+            description={post.description || "No description"}
+            type={post.type || "No type"}
+            website={post.website_url || "No website"}
+            createdAt={post.created_at || "No created at"}
+            instruments={post.ensemble_id.open_positions || "No instruments"}
+            location={`${post.ensemble_id.location.city || "No city"}, ${post.ensemble_id.location.country || "No country"}`}
             isPostCardAdmin={isPostCardAdmin}
             onDeleteButtonClick={() => onDeleteButtonClick?.(post._id)}
           />
